@@ -1,59 +1,90 @@
-# A11yAccessibilityDemo
+# A11y Accessibility Demo ♿
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
+Diese Demo zeigt, wie man einfache UI-Boostrap-Komponenten wie ein **Accordion** und 
+ein **Bild** nach den **A11y-Standards** (Accessibility) umsetzt. 
+Das Projekt veranschaulicht, wie Barrierefreiheit bereits in 
+kleinen Angular-Anwendungen berücksichtigt werden kann.
 
-## Development server
 
-To start a local development server, run:
+## 🛠️ Verwendete Technologien
 
-```bash
+- **Angular 19**
+- **Bootstrap 5** (für Accordion-Layout)
+- **Lighthouse** (Chrome DevTools) – für A11y-Analyse
+- **axe DevTools** (Browser-Plugin) – für detaillierte Accessibility-Checks
+
+## ✨ Features
+
+- **Accordion** mit korrekten ARIA-Attributen
+- **Bild** mit sinnvoller `alt`-Beschreibung
+- Fokus-Management für Tastaturnavigation
+- Optimiert für Screenreader-Nutzung
+- Überprüfbar mit **Lighthouse** und **axe DevTools**
+
+
+## 🖥️ Screenreader aktivieren
+
+```
+Windows: Windows + Strg + Eingabetaste (Narrator)
+Mac:     Cmd + F5 (VoiceOver)
+Linux:   Alt + Super + S (Orca Screen Reader) 
+```
+
+> **Hinweis:** Bei manchen Systemen muss der Screenreader vorher installiert oder aktiviert werden.
+
+
+## 📋 Aufbau & Inhalte
+
+### Accordion
+
+- Jedes Accordion-Element ist mit den richtigen `aria-expanded` und `aria-controls` versehen.
+- Fokusreihenfolge und Tastaturnavigation werden eingehalten.
+
+### Bild
+
+- Jedes Bild hat ein sinnvolles `alt`-Attribut, damit Screenreader den Inhalt korrekt beschreiben können.
+
+
+## 🧪 A11y-Prüfung
+
+Zur Überprüfung der Barrierefreiheit kannst du folgende Tools nutzen:
+
+### Lighthouse (Chrome DevTools)
+
+1. Öffne die Anwendung im Browser.
+2. Öffne die **Chrome DevTools** (`F12` oder `Strg+Shift+I`).
+3. Gehe zum Reiter **Lighthouse**.
+4. Wähle den Bereich **Accessibility** aus.
+5. Starte den Scan und analysiere die Ergebnisse.
+
+### axe DevTools
+
+1. Installiere die **axe DevTools** Erweiterung für deinen Browser.
+2. Öffne die Anwendung und die **axe**-Erweiterung.
+3. Führe einen Accessibility-Check durch und befolge Verbesserungsvorschläge.
+
+
+## 🚀 Lokales Setup
+
+```
+git clone https://github.com/ronnymundt/a11y-accessibility-demo.git
+cd a11y-accessibility-demo
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## 📸 Screenshots
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+![Screenshot](./public/screenshot-1.png)
+![Screenshot](./public/screenshot-2.png)
 
-```bash
-ng generate component component-name
-```
+## 📚 Ressourcen
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)
+- [Angular Accessibility Guide](https://angular.io/guide/accessibility)
+- [Bootstrap 5 Accessibility](https://getbootstrap.com/docs/5.0/getting-started/accessibility/)
+- [axe DevTools](https://www.deque.com/axe/devtools/)
 
-```bash
-ng generate --help
-```
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Viel Spass beim Erkunden von A11y in Angular! 🌟
