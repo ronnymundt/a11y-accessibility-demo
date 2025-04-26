@@ -1,0 +1,47 @@
+<h1>A11y Accessibility Demo</h1>
+<hr />
+<!-- image -->
+<div class="card mb-3">
+  <div class="card-body">
+    <h2 class="card-title mb-3">Image Component</h2>
+    <img
+      src="https://picsum.photos/600/100"
+      class="card-img-top"
+      alt="Random Picture"
+    />
+  </div>
+</div>
+<!-- accordion -->
+<div class="card mb-3">
+  <div class="card-body">
+    <h2 class="card-title mb-3">Accordion Component</h2>
+    <div class="accordion">
+      @for (item of [1, 2, 3]; track item; let i = $index) {
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              [ngClass]="{ collapsed: activeIndex !== i }"
+              type="button"
+              (click)="activeIndex = activeIndex === i ? -1 : i"
+              [attr.aria-expanded]="activeIndex === i"
+              [attr.aria-controls]="'collapse' + i"
+            >
+              Accordion Item #{{ i + 1 }}
+            </button>
+          </h2>
+          <div
+            [id]="'collapse' + i"
+            class="accordion-collapse collapse"
+            [ngClass]="{ show: activeIndex === i }"
+          >
+            <div class="accordion-body">
+              <strong>This is the accordion body #{{ i + 1 }}.</strong>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
